@@ -1,12 +1,7 @@
 import { Negociacoes } from "../models/negociacoes.js";
+import { View } from "./view.js";
 
-export class NegociacoesView {
-    private elemento: HTMLElement;
-
-    constructor(seletor: string) {
-        this.elemento = document.querySelector(seletor);
-    }
-
+export class NegociacoesView extends View<Negociacoes> {
     // o método Intl.DateTimeFormat irá formatar a data de acordo com o navegador
     template(model: Negociacoes): string {
         return `
