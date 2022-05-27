@@ -1,6 +1,5 @@
 import { View } from "./view.js";
 export class NegociacoesView extends View {
-    // o método Intl.DateTimeFormat irá formatar a data de acordo com o navegador
     template(model) {
         return `
         <table class="table table-hover table-bordered">

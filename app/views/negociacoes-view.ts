@@ -2,7 +2,6 @@ import { Negociacoes } from "../models/negociacoes.js";
 import { View } from "./view.js";
 
 export class NegociacoesView extends View<Negociacoes> {
-    // o método Intl.DateTimeFormat irá formatar a data de acordo com o navegador
     protected template(model: Negociacoes): string {
         return `
         <table class="table table-hover table-bordered">
@@ -30,7 +29,7 @@ export class NegociacoesView extends View<Negociacoes> {
         </table>        
         `;
     }
-
+    // o método Intl.DateTimeFormat irá formatar a data de acordo com o navegador
     private formatarData(data: Date): string {
         return new Intl.DateTimeFormat().format(data);
     }
