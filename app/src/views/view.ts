@@ -1,3 +1,5 @@
+import { logarTempoExecucao } from "../decorators/logar-tempo-execucao";
+
 export abstract class View<T> {
     protected elemento: HTMLElement;
     // Escapar previne que algum script não desejado seja inserido dentro do HTML e mostrado na tela.
@@ -17,6 +19,7 @@ export abstract class View<T> {
         }
     }
 
+    @logarTempoExecucao(true)
     public update(model: T): void {
         // Um método para saber o tempo de renderização é utilizar o performance
         //const t1 = performance.now();
