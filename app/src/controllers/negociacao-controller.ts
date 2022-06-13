@@ -12,7 +12,7 @@ export class NegociacaoController {
 
     private negociacoes = new Negociacoes();
 
-    private negociacoesView = new NegociacoesView("#negociacoesView", true);
+    private negociacoesView = new NegociacoesView("#negociacoesView");
     private mensagemVIew = new MensagemView("#mensagemView");
 
     constructor() {
