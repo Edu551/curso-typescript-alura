@@ -14,8 +14,6 @@ export abstract class View<T> {
         }
     }
 
-    @logarTempoExecucao(true)
-    @inspect
     public update(model: T): void {
         // Um método para saber o tempo de renderização é utilizar o performance
         //const t1 = performance.now();
