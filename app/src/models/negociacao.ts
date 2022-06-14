@@ -1,4 +1,6 @@
-export class Negociacao {
+import { Imprimivel } from "../utils/imprimivel.js";
+
+export class Negociacao implements Imprimivel {
     // private _data: Date;
     // private _quantidade: number;
     // private _valor: number;
@@ -37,7 +39,14 @@ export class Negociacao {
         private _data: Date,
         public readonly quantidade: number,
         public readonly valor: number
-    ) {}
+    ) {
+        /*
+        // Esse super é o construtor da classe Imprimivel que foi herdada, quando se usa o extends. 
+        // É o construtor padrão das classes. Como mudamos a classe para uma interface não precimamos mais de 
+        // construtor.
+        super();
+        */
+    }
     // O readonly só não deixa trabalhar com atribuição, os valores ainda podem ser modificados
     // com método invocados neles. Ex. negociacao.data.setDate();
 
@@ -61,5 +70,13 @@ export class Negociacao {
         const quantidade = parseInt(quantidadeString);
         const valor = parseFloat(valorString);
         return new Negociacao(date, quantidade, valor);
+    }
+
+    public paraTexto(): string {
+        return `
+            Data: ${this.data},
+            Quantidade: ${this.quantidade},
+            Valor: ${this.valor}
+        `;
     }
 }
