@@ -1,6 +1,7 @@
-import { Imprimivel } from "../utils/imprimivel.js";
+import { IModelo } from "../interfaces/IModelo.js";
 
-export class Negociacao implements Imprimivel {
+export class Negociacao implements IModelo<Negociacao> {
+    //#region "Código antigo"
     // private _data: Date;
     // private _quantidade: number;
     // private _valor: number;
@@ -31,8 +32,8 @@ export class Negociacao implements Imprimivel {
     // get valor(): number {
     //     return this._valor;
     // }
-
     // --------------------------------------------------//
+    //#endregion
 
     // Os getters e o construtor acima podem ser escritos da seguinte forma:
     constructor(
@@ -78,5 +79,13 @@ export class Negociacao implements Imprimivel {
             Quantidade: ${this.quantidade},
             Valor: ${this.valor}
         `;
+    }
+
+    public ehIgual(negociacao: Negociacao): boolean {
+        return (
+            this.data.getDate() === negociacao.data.getDate() &&
+            this.data.getMonth() === negociacao.data.getMonth() &&
+            this.data.getFullYear() === negociacao.data.getFullYear()
+        );
     }
 }
